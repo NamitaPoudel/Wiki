@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    <h2>Edit Content</h2>
+    <br />
+    <form action="" method="POST">
+        {% csrf_token %}
+        <span>Title: <input type="text" placeholder="Title" name="title" value="{{title}}" readonly/></span><br>
+        <br/>
+        <label>MarkDown Content: </label>
+        <br>
+        <textarea name="description" placeholder="Description..." style="height: 60vh; width: 80%;">{{entry}}</textarea>
+        <br>
+        <input type="submit" value="Save" class="btn btn-info">
+    </form>
+{% endblock %}

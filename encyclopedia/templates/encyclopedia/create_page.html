@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <span>Title: <input type="text" placeholder="Title" name="title" /></span><br/>
+        <label>MarkDown Content: </label>
+        <br/>
+        <textarea name="description" placeholder="Description..." style="height: 60vh; width: 80%;"></textarea>
+        <br/>
+        <input type="submit" value="Save" class="btn btn-info">
+    </form>
+{% endblock %}
